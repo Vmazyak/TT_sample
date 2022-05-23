@@ -1,0 +1,31 @@
+<!-- 
+  Confirm that test fails due to:
+  1) Upon page load:
+    1a) button1 is visible.
+    1b) div1 is hidden
+  2) When button1 is clicked:
+    FAILS: 2a) div1 becomes visible
+    2b) div1 innerHTML set to "world"
+    2c) No JavaScript errors are thrown.
+-->
+
+<html>
+<body>
+  <button id="button1">Hello</button>
+  <div id="div1" style="display:none;" />
+
+  <script type="text/javascript">
+    // Attach function to onlick for our button
+    document.getElementById("button1").onclick = hello;
+
+    // When button is clicked, unhide div1 and write "hello" to div1.
+    function hello() {
+      // Get div1 element.
+      let el = document.getElementById("div1");
+      // Unhide the div
+      // el.style.display = "";
+      // Write "world" to div.
+      el.innerHTML = "world";
+    }
+  </script>
+</body>

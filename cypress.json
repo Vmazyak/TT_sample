@@ -1,0 +1,20 @@
+{
+  "defaultCommandTimeout": 2000,
+  "chromeWebSecurity": false,
+  "pageLoadTimeout": 2000,
+  "video": false,
+  "viewportWidth": 1920,
+  "viewportHeight": 1080,
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "reporterEnabled": "mochawesome",
+    "mochawesomeReporterOptions": {
+      "reportDir": "cypress/reports/mocha",
+      "quite": true,
+      "overwrite": true,
+      "html": true,
+      "json": false,
+      "video": true
+    }
+  }
+}

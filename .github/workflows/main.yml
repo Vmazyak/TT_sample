@@ -1,0 +1,22 @@
+name: TT_example test
+
+on:
+  workflow_dispatch: # to run manually
+  push:
+    branches:
+    - master  #run on push into master
+  schedule:
+  - cron: "0 2 * * 1-5" #run on schedule time in 00:00 from mon to fr
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm run test:headless #run tests with command from package.json
